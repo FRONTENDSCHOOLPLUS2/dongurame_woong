@@ -1,0 +1,25 @@
+meta {
+  name: 게시물 등록
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{URL}}/posts
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{accessToken}}
+}
+
+body:json {
+  {
+    "type": "dongurame",
+    "title": "여행 후기 입니다.",
+    "content": "안녕 난 세상을 정복할 동그라미",
+    "image": "sample-bugatti.png",
+    "tag": "혼자,떠나요,제주도"
+  }
+}
