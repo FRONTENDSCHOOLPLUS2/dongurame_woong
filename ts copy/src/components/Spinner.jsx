@@ -1,0 +1,43 @@
+import { GridLoader } from "react-spinners";
+
+const Spinner = {
+  FullScreen() {
+    return (
+      <div className="fixed inset-0 flex items-center justify-center bg-white bg-opacity-10">
+        <div className="flex flex-col items-center">
+          <h3 className="mb-4 text-lg font-semibold">죠또 마떼 구다사이..</h3>
+          <GridLoader color="#F97316" />
+          {/* <span>로딩중....</span> */}
+        </div>
+      </div>
+    );
+  },
+
+  WithHeader() {
+    const screenHeight = window.innerHeight; // 현재 브라우저 창의 높이
+    const headerHeight = 68;
+    const footerHeight = 68; // 예시로 Footer의 높이를 80px로 설정
+    const spinnerHeight = screenHeight - headerHeight - footerHeight; // 스피너 영역의 높이 계산
+    return (
+      <div
+        className="flex items-center justify-center"
+        style={{ height: spinnerHeight }}
+      >
+        <div className="text-center">
+          <h3 className="mb-4 text-lg font-semibold">잠시만 기다려주세요.</h3>
+          <GridLoader color="#F97316" />
+        </div>
+      </div>
+    );
+  },
+
+  TargetArea() {
+    return (
+      <div className="flex justify-center">
+        <GridLoader color="#F97316" />
+      </div>
+    );
+  },
+};
+
+export default Spinner;
